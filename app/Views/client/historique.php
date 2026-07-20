@@ -41,10 +41,40 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
-                        <td>--</td>
+<tbody>
+
+<?php if (!empty($historique)): ?>
+
+    <?php foreach ($historique as $operation): ?>
+
+    <tr>
+        <td><?= date('d/m/Y H:i', strtotime($operation['date_historique'])) ?></td>
+
+        <td><?= esc($operation['operation']) ?></td>
+
+        <td><?= number_format($operation['montant'], 0, ',', ' ') ?> Ar</td>
+
+        <td>
+            <span style="color:green;font-weight:bold;">
+                Effectuée
+            </span>
+        </td>
+
+    </tr>
+
+    <?php endforeach; ?>
+
+<?php else: ?>
+
+<tr>
+    <td colspan="4" style="text-align:center;">
+        Aucune opération enregistrée.
+    </td>
+</tr>
+
+<?php endif; ?>
+
+</tbody>
                     </tr>
                 </tbody>
             </table>

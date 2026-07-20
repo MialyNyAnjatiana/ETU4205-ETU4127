@@ -32,7 +32,7 @@
         </div>
         <div class="card">
             <h3>Solde disponible</h3>
-            <p style="font-size: 2rem; font-weight: bold;"><?= isset($solde) ? esc(number_format($solde, 0, ',', ' ')) . ' FCFA' : 'N/A' ?></p>
+            <p style="font-size: 2rem; font-weight: bold;"><?= isset($solde) ? esc(number_format($solde, 0, ',', ' ')) . ' Ar' : 'N/A' ?></p>
         </div>
         <div class="card actions">
             <a href="<?= base_url('/client/solde') ?>">Voir le solde</a>

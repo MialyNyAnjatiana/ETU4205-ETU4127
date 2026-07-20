@@ -32,7 +32,7 @@
             <h2>Faire un dépôt</h2>
             <form method="post" action="#">
                 <div class="field">
-                    <label for="montant">Montant (FCFA)</label>
+                    <label for="montant">Montant (Ar)</label>
                     <input type="number" id="montant" name="montant" min="100" placeholder="Entrez le montant" required>
                 </div>
                 <button type="submit" class="button">Valider le dépôt</button>

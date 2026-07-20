@@ -17,7 +17,11 @@ $routes->get('/client/depot', 'UtilisateurController::depot');
 $routes->post('/client/depot', 'UtilisateurController::depot');
 
 $routes->get('/client/retrait', 'UtilisateurController::retrait');
+$routes->post('/client/retrait', 'UtilisateurController::retrait');
+
 $routes->get('/client/transfert', 'UtilisateurController::transfert');
+$routes->post('/client/transfert', 'UtilisateurController::transfert');
+
 $routes->get('/client/historique', 'UtilisateurController::historique');
 $routes->get('/logout', 'UtilisateurController::logout');
 $routes->get('/login', 'Home::viewLogin');
