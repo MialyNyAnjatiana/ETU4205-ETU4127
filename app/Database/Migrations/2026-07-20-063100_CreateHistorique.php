@@ -12,6 +12,7 @@ class CreateHistorique extends Migration
             'id' => [ 'type' => 'INTEGER', 'constraint' => 11, 'auto_increment' => true, ],
             'id_utilisateur' => ['type' => 'INTEGER'],
             'montant' => ['type' => 'DECIMAL'],
+            'frais' => ['type' => 'DECIMAL'],
             'id_type_operation' => ['type' => 'INTEGER'],
             'date_historique' => ['type' => 'DATETIME', 'null' => true],
         ]);

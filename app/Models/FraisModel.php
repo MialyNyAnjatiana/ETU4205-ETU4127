@@ -73,4 +73,24 @@ class FraisModel extends Model
             ->orderBy('valeur_min', 'ASC')
             ->findAll();
     }
+
+    public function getAllFrais()
+    {
+        return $this->db->table('frais f')
+            ->select('
+            f.id,
+            f.valeur_min,
+            f.valeur_max,
+            f.montant_frais,
+            t.nom as nom_operation
+        ')
+            ->join(
+                'type_operation t',
+                't.id = f.id_type_operation'
+            )
+            ->orderBy('t.id', 'ASC')
+            ->orderBy('f.valeur_min', 'ASC')
+            ->get()
+            ->getResultArray();
+    }
 }

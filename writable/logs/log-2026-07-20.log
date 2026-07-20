@@ -162,3 +162,35 @@ in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
 10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-07-20 11:20:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 11:35:54 --> CodeIgniter\Exceptions\PageNotFoundException: Controller or its method is not found: \App\Controllers\OperationController::index
+[Method: GET, Route: admin/operations]
+in SYSTEMPATH/CodeIgniter.php on line 1001.
+ 1 SYSTEMPATH/CodeIgniter.php(1001): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound()
+ 2 SYSTEMPATH/CodeIgniter.php(346): CodeIgniter\CodeIgniter->display404errors()
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 5 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-07-20 11:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 11:41:29 --> CodeIgniter\Exceptions\PageNotFoundException: Can't find a route for 'GET: admin'.
+[Method: GET, Route: admin]
+in SYSTEMPATH/CodeIgniter.php on line 1001.
+ 1 SYSTEMPATH/CodeIgniter.php(1001): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound()
+ 2 SYSTEMPATH/CodeIgniter.php(346): CodeIgniter\CodeIgniter->display404errors()
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 5 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-07-20 11:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
