@@ -11,7 +11,10 @@ class CreatePrefixe extends Migration
         $this->forge->addField([
             'id' => [ 'type' => 'INTEGER', 'constraint' => 11, 'auto_increment' => true, ],
             'valeur' => [ 'type' => 'VACRHAR', 'constraint' => 3],
+            'id_operateur' => ['type' => 'INETEGER', 'null' => true, 'default' => null],
         ]);
+
+        $this->forge->addForeignKey('id_operateur', 'operateur', 'id');
 
         $this->forge->addKey('id', true);
 

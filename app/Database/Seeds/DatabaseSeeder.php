@@ -17,11 +17,41 @@ class DatabaseSeeder extends Seeder
         $this->db->table('utilisateur')->emptyTable();
         $this->db->table('prefixe')->emptyTable();
 
+        $this->db->table('operateur')->insertBatch([
+            [
+                'id' => 1,
+                'nom' => 'Orange',
+                'pourcentage_comission' => 2,
+            ],
+            [
+                'id' => 2,
+                'nom' => 'Airtel',
+                'pourcentage_comission' => 2,
+            ],
+            [
+                'id' => 3,
+                'nom' => 'Yas',
+                'pourcentage_comission' => 2,
+            ],
+        ]);
+
         $this->db->table('prefixe')->insertBatch([
-            ['valeur' => '032'],
-            ['valeur' => '033'],
-            ['valeur' => '034'],
-            ['valeur' => '038'],
+            [
+                'valeur' => '032',
+                'id_operateur' => 1,
+            ],
+            [
+                'valeur' => '033',
+                'id_operateur' => 2,
+            ],
+            [
+                'valeur' => '034',
+                'id_operateur' => 3,
+            ],
+            [
+                'valeur' => '035',
+                'id_operateur' => null,
+            ],
         ]);
 
         $this->db->table('type_operation')->insertBatch([

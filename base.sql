@@ -1,7 +1,9 @@
 -- sqlite3 mobile-money.db
 CREATE TABLE prefixe (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    valeur VARCHAR(3) NOT NULL
+    valeur VARCHAR(3) NOT NULL,
+    id_operateur INTEGER,
+    FOREIGN KEY (id_operateur) REFERENCES operateurs(id)
 );
 
 
@@ -45,4 +47,10 @@ CREATE TABLE historique (
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE,
     FOREIGN KEY (id_type_operation) REFERENCES type_operation(id) ON DELETE CASCADE
     
+);
+
+CREATE TABLE operateurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR NOT NULL,
+    pourcentage_commission DECIMAL(5,2) NOT NULL
 );

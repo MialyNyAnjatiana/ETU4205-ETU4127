@@ -6,6 +6,8 @@
     Situation des comptes clients
     Gestion opérations
     Gestion prefixes
+        - configuration pour operateur
+        - configuration pour autres operateurs
     <?= $this->include('partials/footer') ?>
 
 
