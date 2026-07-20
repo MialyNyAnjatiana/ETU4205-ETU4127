@@ -40,11 +40,13 @@ CREATE TABLE frais (
 CREATE TABLE historique (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     id_utilisateur INTEGER NOT NULL,
+    id_destinataire INTEGER NOT NULL,
     montant DECIMAL NOT NULL,
     frais DECIMAL NOT NULL,
     id_type_operation INTEGER NOT NULL,
     date_historique DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_destinataire) REFERENCES utilisateur(id) ON DELETE CASCADE,
     FOREIGN KEY (id_type_operation) REFERENCES type_operation(id) ON DELETE CASCADE
     
 );
