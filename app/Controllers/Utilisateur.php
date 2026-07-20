@@ -157,9 +157,22 @@ class UtilisateurController extends BaseController
     if ($soldeActuel['montant_dispo'] < $montant) {
         return redirect()->back()->with('error', 'Solde insuffisant pour effectuer le retrait.');
     }  
-    $frais =  
-    $nouveauMontant = $soldeActuel['montant_dispo'] - $montant;
+    $frais = fraisModel::getFraisByOperation('retrait');     
+    $nouveauMontant = $soldeActuel['montant_dispo'] - $montant - $frais['montant'];
+    $this->soldeModel->updateSolde($idUtilisateur, $nouveauMontant);
 
+     $typeOperation = $this->typeOperationModel->where('nom', 'retrait')->first();
+        $this->historiqueModel->insert([
+            'id_utilisateur' => $idUtilisateur, 
+            'id_type_operation' => $typeOperation['id'],
+            'montant' => $montant,
+            'date_historique' => date('Y-m-d H:i:s')
+        ]);
+
+        return redirect()->to('/client/solde')->with('success', 'Retrait effectué avec succès.');
+
+    }
+    
     public function transfert()
     {
 
