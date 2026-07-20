@@ -19,12 +19,13 @@ class FraisModel extends Model
 
     protected $useTimestamps = false;
 
-    public function getFrais($montant)
-    {
-        return $this->where('valeur_min <=', $montant)
-            ->where('valeur_max >=', $montant)
-            ->first();
-    }
+public function getFrais($montant, $idTypeOperation)
+{
+    return $this->where('id_type_operation', $idTypeOperation)
+                ->where('valeur_min <=', $montant)
+                ->where('valeur_max >=', $montant)
+                ->first();
+}
 
     protected $db;
 

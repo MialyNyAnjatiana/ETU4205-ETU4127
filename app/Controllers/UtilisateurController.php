@@ -96,7 +96,7 @@ class UtilisateurController extends BaseController
 
     public function adminDashboard()
     {
-        if (!session()->get('isLoggedIn') || session()->get('role') !== 'admin') {
+        if (!session()->get('isLoggedIn') || session()->get('role') !== 'administrateur') {
             return redirect()->to('/login');
         }
         return view('admin/dashboard');
@@ -145,8 +145,10 @@ class UtilisateurController extends BaseController
         }
         $this->historiqueModel->insert([
             'id_utilisateur' => $idUtilisateur,
-            'id_type_operation' => $typeOperation['id'],
+            'id_destinataire' => null,
             'montant' => $montant,
+            'frais' => 0,
+            'id_type_operation' => $typeOperation['id'],
             'date_historique' => date('Y-m-d H:i:s')
         ]);
 
@@ -180,7 +182,11 @@ class UtilisateurController extends BaseController
                 ->with('error', 'Solde introuvable.');
         }
 
-        $frais = $this->fraisModel->getFrais($montant);
+                $type = $this->typeOperationModel
+            ->where('nom', 'Retrait')
+            ->first();
+
+        $frais = $this->fraisModel->getFrais($montant, $type['id']);
 
         $montantFrais = $frais
             ? $frais['montant_frais']
@@ -197,9 +203,7 @@ class UtilisateurController extends BaseController
             $idUtilisateur,
             $solde['montant_dispo'] - $total
         );
-        $type = $this->typeOperationModel
-            ->where('nom', 'Retrait')
-            ->first();
+
 
         if (!$type) {
             return redirect()->back()
@@ -208,8 +212,10 @@ class UtilisateurController extends BaseController
 
         $this->historiqueModel->insert([
             'id_utilisateur' => $idUtilisateur,
-            'id_type_operation' => $type['id'],
+            'id_destinataire' => null,
             'montant' => $montant,
+            'frais' => $montantFrais,
+            'id_type_operation' => $type['id'],
             'date_historique' => date('Y-m-d H:i:s')
         ]);
 
@@ -221,114 +227,115 @@ class UtilisateurController extends BaseController
             );
     }
 
-public function transfert()
-{
-    if (!session()->get('isLoggedIn')) {
-        return redirect()->to('/login');
-    }
-
-    if ($this->request->getMethod() === 'GET') {
-        return view('client/transfert');
-    }
-
-    $liste = trim($this->request->getPost('beneficiaires'));
-    $montant = (float)$this->request->getPost('montant');
-    $modeFrais = $this->request->getPost('frais');
-
-    if ($montant <= 0) {
-        return redirect()->back()->with('error', 'Montant invalide.');
-    }
-
-    $numeros = array_filter(array_map('trim', explode(',', $liste)));
-
-    if (count($numeros) == 0) {
-        return redirect()->back()->with('error', 'Aucun bénéficiaire.');
-    }
-
-    $idExpediteur = session()->get('id_utilisateur');
-
-    $soldeExp = $this->soldeModel->getSolde($idExpediteur);
-
-    if (!$soldeExp) {
-        return redirect()->back()->with('error', 'Solde introuvable.');
-    }
-
-    $type = $this->typeOperationModel
-        ->where('nom', 'Transfert')
-        ->first();
-
-    if (!$type) {
-        return redirect()->back()->with('error', 'Type Transfert introuvable.');
-    }
-
-    $partMontant = $montant / count($numeros);
-
-    $frais = $this->fraisModel->getFrais($montant);
-
-    $montantFrais = $frais ? $frais['montant_frais'] : 0;
-
-    $partFrais = $montantFrais / count($numeros);
-
-    if ($modeFrais == "apart") {
-
-        $debitTotal = $montant + $montantFrais;
-        $creditParPersonne = $partMontant;
-
-    } else {
-
-        $debitTotal = $montant;
-        $creditParPersonne = $partMontant - $partFrais;
-
-        if ($creditParPersonne <= 0) {
-            return redirect()->back()
-                ->with('error', 'Les frais sont supérieurs au montant.');
-        }
-    }
-
-    if ($soldeExp['montant_dispo'] < $debitTotal) {
-        return redirect()->back()->with('error', 'Solde insuffisant.');
-    }
-
-    $this->soldeModel->updateSolde(
-        $idExpediteur,
-        $soldeExp['montant_dispo'] - $debitTotal
-    );
-
-    foreach ($numeros as $numero) {
-
-        $destinataire = $this->utilisateurModel->getByNumero($numero);
-
-        if (!$destinataire) {
-            continue;
+    public function transfert()
+    {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
         }
 
-        if ($destinataire['id'] == $idExpediteur) {
-            continue;
+        if ($this->request->getMethod() === 'GET') {
+            return view('client/transfert');
         }
 
-        $soldeDest = $this->soldeModel->getSolde($destinataire['id']);
+        $liste = trim($this->request->getPost('beneficiaires'));
+        $montant = (float) $this->request->getPost('montant');
+        $modeFrais = $this->request->getPost('frais');
+
+        if ($montant <= 0) {
+            return redirect()->back()->with('error', 'Montant invalide.');
+        }
+
+        $numeros = array_filter(array_map('trim', explode(',', $liste)));
+
+        if (count($numeros) == 0) {
+            return redirect()->back()->with('error', 'Aucun bénéficiaire.');
+        }
+
+        $idExpediteur = session()->get('id_utilisateur');
+
+        $soldeExp = $this->soldeModel->getSolde($idExpediteur);
+
+        if (!$soldeExp) {
+            return redirect()->back()->with('error', 'Solde introuvable.');
+        }
+
+        $type = $this->typeOperationModel
+            ->where('nom', 'Transfert')
+            ->first();
+
+        if (!$type) {
+            return redirect()->back()->with('error', 'Type Transfert introuvable.');
+        }
+
+        $partMontant = $montant / count($numeros);
+
+        $frais = $this->fraisModel->getFrais($montant, $type['id']);
+
+        $montantFrais = $frais ? $frais['montant_frais'] : 0;
+
+        $partFrais = $montantFrais / count($numeros);
+
+        if ($modeFrais == "apart") {
+
+            $debitTotal = $montant + $montantFrais;
+            $creditParPersonne = $partMontant;
+
+        } else {
+
+            $debitTotal = $montant;
+            $creditParPersonne = $partMontant - $partFrais;
+
+            if ($creditParPersonne <= 0) {
+                return redirect()->back()
+                    ->with('error', 'Les frais sont supérieurs au montant.');
+            }
+        }
+
+        if ($soldeExp['montant_dispo'] < $debitTotal) {
+            return redirect()->back()->with('error', 'Solde insuffisant.');
+        }
 
         $this->soldeModel->updateSolde(
-            $destinataire['id'],
-            $soldeDest['montant_dispo'] + $creditParPersonne
+            $idExpediteur,
+            $soldeExp['montant_dispo'] - $debitTotal
         );
 
-        // Historique : une ligne par destinataire
-        $this->historiqueModel->insert([
-            'id_utilisateur'    => $idExpediteur,
-            'id_type_operation' => $type['id'],
-            'montant'           => $creditParPersonne,
-            'date_historique'   => date('Y-m-d H:i:s')
-        ]);
+        foreach ($numeros as $numero) {
+
+            $destinataire = $this->utilisateurModel->getByNumero($numero);
+
+            if (!$destinataire) {
+                continue;
+            }
+
+            if ($destinataire['id'] == $idExpediteur) {
+                continue;
+            }
+
+            $soldeDest = $this->soldeModel->getSolde($destinataire['id']);
+
+            $this->soldeModel->updateSolde(
+                $destinataire['id'],
+                $soldeDest['montant_dispo'] + $creditParPersonne
+            );
+
+            $this->historiqueModel->insert([
+                'id_utilisateur' => $idExpediteur,
+                'id_destinataire' => $destinataire['id'],
+                'montant' => $creditParPersonne,
+                'frais' => $partFrais,
+                'id_type_operation' => $type['id'],
+                'date_historique' => date('Y-m-d H:i:s')
+            ]);
+        }
+
+        return redirect()
+            ->to('/client/solde')
+            ->with(
+                'success',
+                count($numeros) . ' transfert(s) effectué(s) avec succès.'
+            );
     }
-
-    return redirect()
-        ->to('/client/solde')
-        ->with(
-            'success',
-            count($numeros) . ' transfert(s) effectué(s) avec succès.'
-        );
-}
 
     public function historique()
     {
