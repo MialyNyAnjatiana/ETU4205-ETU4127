@@ -30,6 +30,7 @@ class UtilisateurModel extends Model
     public function getAllClients()
     {
         return $this->where('role', 'client')
+                    ->join('solde', 'utilisateur.id = solde.id_utilisateur')
                     ->findAll();
     }
 

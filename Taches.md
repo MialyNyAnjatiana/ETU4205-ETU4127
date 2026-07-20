@@ -1,14 +1,15 @@
 ## ETU 4205
 - Création base.sql
-- Création + importation données dans la base (Migrations + Seeds)
+- Création + importation données dans la base (Migrations + Seeds) (ok)
 - Gestion côté opérateur (admin)
-    Connexion à la page admin
-    Situation des comptes clients
-    Gestion opérations
-    Gestion prefixes
+    Connexion à la page admin (ok)
+        redirection vers dashboard
+    Situation des comptes clients (ok)
+    Gestion opérations (ok)
+    Gestion prefixes (ok)
         - configuration pour operateur
-        - configuration pour autres operateurs
-    <?= $this->include('partials/footer') ?>
+        - configuration pour autres operateurs (+ comissions)
+- Mise à jour base (ok)
 
 
 ## ETU 4127
