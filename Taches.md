@@ -306,24 +306,3 @@ boutons
 
 ---
 
-
-
-
-**Étudiant 1 (Back-end)**
-
-* Base de données (`base.sql`)
-* Models
-* Controllers
-* Authentification
-* Logique métier (dépôt, retrait, transfert, calcul des frais)
-
-**Étudiant 2 (Front-end)**
-
-* Vues Bootstrap
-* Dashboard administrateur
-* Dashboard client
-* Formulaires
-* Historique
-* Navigation et intégration
-
-Ainsi, chacun peut avancer en parallèle tout en limitant les conflits Git.
