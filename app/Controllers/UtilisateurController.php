@@ -77,7 +77,7 @@ class UtilisateurController extends BaseController
             'isLoggedIn' => true
         ]);
 
-        $redirectTo = $utilisateur['role'] === 'admin' ? '/admin/dashboard' : '/client/dashboard';
+        $redirectTo = $utilisateur['role'] === 'administrateur' ? '/admin/dashboard' : '/client/dashboard';
         return redirect()->to($redirectTo);
     }
 

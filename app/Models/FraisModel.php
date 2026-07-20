@@ -9,19 +9,22 @@ class FraisModel extends Model
     protected $table = 'frais';
     protected $primaryKey = 'id';
 
-    protected $useAutoIncrement = true;
-
-    protected $returnType = 'array';
-
     protected $allowedFields = [
         'valeur_min',
         'valeur_max',
-        'montant_frais',
-        'id_type_operation'
+        'montant_frais'
     ];
+
+    protected $returnType = 'array';
 
     protected $useTimestamps = false;
 
+    public function getFrais($montant)
+    {
+        return $this->where('valeur_min <=', $montant)
+            ->where('valeur_max >=', $montant)
+            ->first();
+    }
 
     protected $db;
 
@@ -34,31 +37,40 @@ class FraisModel extends Model
 
     public function getGainRetrait()
     {
-        return $this->db->table('transaction t')
+        return $this->db->table('historique h')
             ->selectSum('f.montant_frais', 'gain')
             ->join(
                 'frais f',
-                't.id_type_operation = f.id_type_operation
-            AND t.montant >= f.valeur_min
-            AND t.montant <= f.valeur_max'
+                'h.id_type_operation = f.id_type_operation
+             AND h.montant >= f.valeur_min
+             AND h.montant <= f.valeur_max'
             )
-            ->where('t.id_type_operation', 2)
+            ->where('h.id_type_operation', 2)
             ->get()
             ->getRowArray();
     }
 
     public function getGainTransfert()
     {
-        return $this->db->table('transaction t')
+        return $this->db->table('historique h')
             ->selectSum('f.montant_frais', 'gain')
             ->join(
                 'frais f',
-                't.id_type_operation = f.id_type_operation
-            AND t.montant >= f.valeur_min
-            AND t.montant <= f.valeur_max'
+                'h.id_type_operation = f.id_type_operation
+             AND h.montant >= f.valeur_min
+             AND h.montant <= f.valeur_max'
             )
-            ->where('t.id_type_operation', 3)
+            ->where('h.id_type_operation', 3)
             ->get()
             ->getRowArray();
+    }
+
+    public static function getFraisByOperation($idTypeOperation)
+    {
+        $model = new self();
+
+        return $model->where('id_type_operation', $idTypeOperation)
+            ->orderBy('valeur_min', 'ASC')
+            ->findAll();
     }
 }
