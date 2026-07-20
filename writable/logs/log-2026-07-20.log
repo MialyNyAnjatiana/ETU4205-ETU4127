@@ -188,43 +188,190 @@ in SYSTEMPATH/CodeIgniter.php on line 1001.
  1 SYSTEMPATH/CodeIgniter.php(1001): CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound()
  2 SYSTEMPATH/CodeIgniter.php(346): CodeIgniter\CodeIgniter->display404errors()
  3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+<<<<<<< HEAD
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-20 09:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 11:25:46 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: client/retrait]
+in APPPATH/Controllers/UtilisateurController.php on line 207.
+ 1 APPPATH/Controllers/UtilisateurController.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/s4/ETU4205-ETU4127/app/Controllers/UtilisateurController.php', 207)
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UtilisateurController->retrait()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UtilisateurController))
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-20 11:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:36:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:55:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-20 11:55:44 --> Unable to prepare statement: 1, no such column: f.id_type_operation
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = :h.id_type_operation:', [...], false)
+ 5 APPPATH/Models/FraisModel.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/AdminController.php(18): App\Models\FraisModel->getGainRetrait()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+CRITICAL - 2026-07-20 11:55:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: f.id_type_operation
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = :h.id_type_operation:', [...], false)
+ 2 APPPATH/Models/FraisModel.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/AdminController.php(18): App\Models\FraisModel->getGainRetrait()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+CRITICAL - 2026-07-20 11:55:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: f.id_type_operation
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = :h.id_type_operation:', [...], false)
+ 4 APPPATH/Models/FraisModel.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/AdminController.php(18): App\Models\FraisModel->getGainRetrait()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+CRITICAL - 2026-07-20 11:55:45 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: f.id_type_operation
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = 2')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`f`.`montant_frais`) AS `gain`
+FROM `historique` `h`
+JOIN `frais` `f` ON `h`.`id_type_operation` = `f`.`id_type_operation` AND `h`.`montant` >= `f`.`valeur_min` AND `h`.`montant` <= `f`.`valeur_max`
+WHERE `h`.`id_type_operation` = :h.id_type_operation:', [...], false)
+ 5 APPPATH/Models/FraisModel.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/AdminController.php(18): App\Models\FraisModel->getGainRetrait()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-20 11:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 11:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 12:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+=======
  4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  5 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 DEBUG - 2026-07-20 11:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-20 11:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-20 11:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-20 11:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-DEBUG - 2026-07-20 12:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2026-07-20 12:30:13 --> near ")": syntax error
-in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
- 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec()
- 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query()
- 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute()
- 6 APPPATH/Database/Seeds/DatabaseSeeder.php(38): CodeIgniter\Database\BaseBuilder->insertBatch()
- 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
- 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
- 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
-10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
-11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
-12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
-13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
-DEBUG - 2026-07-20 12:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-DEBUG - 2026-07-20 12:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2026-07-20 12:31:08 --> near ")": syntax error
-in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
- 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec()
- 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
- 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
- 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query()
- 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute()
- 6 APPPATH/Database/Seeds/DatabaseSeeder.php(38): CodeIgniter\Database\BaseBuilder->insertBatch()
- 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
- 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
- 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
-10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
-11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
-12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
-13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
-DEBUG - 2026-07-20 12:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+>>>>>>> fea432ffc12fc8b86516d6b721e98d494dccec50
