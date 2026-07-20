@@ -10,7 +10,7 @@ class CreateUtilisateur extends Migration
     {
         $this->forge->addField([
             'id' => ['type' => 'INTEGER', 'constraint' => 11, 'auto_increment' => true,],
-            'nom' => ['type' => 'VARCHAR', 'constraint' => 100],
+            'nom' => ['type' => 'VARCHAR', 'constraint' => 100, 'null' => true],
             'num_tel' => ['type' => 'VARCHAR', 'constraint' => 10],
             'role' => ['type' => 'VARCHAR', 'constraint' => 10, 'default' => 'client'],
             'created_at' => ['type' => 'DATETIME', 'null' => true,],

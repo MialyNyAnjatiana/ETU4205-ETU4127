@@ -1,6 +1,9 @@
 ## ETU 4205
 - Création base.sql
 - Création + importation données dans la base (Migrations + Seeds)
+- Gestion côté opérateur (admin)
+    Connexion à la page admin
+    Situation des comptes clients
 
 ## ETU 4127
 - Creation des models
