@@ -18,7 +18,7 @@ class PrefixeModel extends Model
     protected $useTimestamps = false;
 
     public function prefixeExiste($prefixe)
-{
-    return $this->where('valeur', $prefixe)->first();
-}
+    {
+        return $this->where('valeur', $prefixe)->first();
+    }
 }

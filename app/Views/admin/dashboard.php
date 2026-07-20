@@ -302,10 +302,9 @@
 	</div>
 
 	<div class="dashboard__actions">
-		<a class="dashboard__button" href="#prefixes">Gérer les préfixes</a>
-		<a class="dashboard__button dashboard__button--secondary" href="#operations">Gérer les opérations</a>
+		<a class="dashboard__button" href="<?= base_url("/admin/prefixes") ?>">Gérer les préfixes</a>
+		<a class="dashboard__button dashboard__button--secondary" href="<?= base_url("/admin/operations") ?>">Gérer les opérations</a>
 		<a class="dashboard__button dashboard__button--dark" href="#clients">Voir liste des clients</a>
-		<a class="dashboard__button dashboard__button--accent" href="#gains">Voir les gains</a>
 	</div>
 
 	<div class="dashboard__grid">
@@ -365,13 +364,11 @@
 					<?php endforeach; ?>
 
 				<?php else: ?>
-
 					<tr>
 						<td colspan="2">
 							Aucun client trouvé
 						</td>
 					</tr>
-
 				<?php endif; ?>
 
 			</tbody>

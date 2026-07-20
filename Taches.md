@@ -4,6 +4,9 @@
 - Gestion côté opérateur (admin)
     Connexion à la page admin
     Situation des comptes clients
+    Gestion opérations
+    Gestion prefixes
+    <?= $this->include('partials/footer') ?>
 
 
 ## ETU 4127
