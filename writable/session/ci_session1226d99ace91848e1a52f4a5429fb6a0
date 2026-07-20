@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1784553387;id_utilisateur|i:1;num_tel|s:10:"0320000001";role|s:14:"administrateur";isLoggedIn|b:1;_ci_previous_url|s:38:"http://localhost:8080/client/dashboard";error|s:51:"Le préfixe du numéro de téléphone est invalide.";__ci_vars|a:1:{s:5:"error";s:3:"old";}
