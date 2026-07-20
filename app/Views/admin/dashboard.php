@@ -137,6 +137,161 @@
 			font-size: 24px;
 			color: #111827;
 		}
+
+		/* ===== Client Table ===== */
+
+		.dashboard__table {
+			width: 100%;
+			border-collapse: separate;
+			border-spacing: 0;
+			overflow: hidden;
+			border-radius: 16px;
+			margin-top: 20px;
+			background: white;
+			box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+		}
+
+		.dashboard__table thead {
+			background: #111827;
+			color: white;
+		}
+
+		.dashboard__table th {
+			padding: 16px 20px;
+			text-align: left;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		.dashboard__table td {
+			padding: 16px 20px;
+			border-bottom: 1px solid #e5e7eb;
+			color: #374151;
+			font-size: 15px;
+		}
+
+		.dashboard__table tbody tr {
+			transition: background 0.2s ease, transform 0.2s ease;
+		}
+
+		.dashboard__table tbody tr:hover {
+			background: #f1f5f9;
+		}
+
+		.dashboard__table tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+
+		/* Phone number style */
+		.dashboard__table td:first-child {
+			font-weight: 700;
+			color: #1d4ed8;
+		}
+
+
+		/* Balance style */
+		.dashboard__table td:last-child {
+			font-weight: 800;
+			color: #047857;
+		}
+
+
+		/* Empty table message */
+		.dashboard__table td[colspan] {
+			text-align: center;
+			color: #6b7280;
+			padding: 30px;
+		}
+
+
+		/* ===== Card improvements ===== */
+
+		.card {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.card::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 4px;
+			width: 100%;
+			background: #1d4ed8;
+		}
+
+
+		.card:nth-child(2)::before {
+			background: #0f766e;
+		}
+
+		.card:nth-child(3)::before {
+			background: #b45309;
+		}
+
+		.card:nth-child(4)::before {
+			background: #7c3aed;
+		}
+
+
+		/* Number formatting */
+		.card__value {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
+
+
+		/* ===== Section animation ===== */
+
+		.dashboard__section {
+			animation: fadeIn 0.4s ease;
+		}
+
+
+		@keyframes fadeIn {
+
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+		}
+
+
+		/* ===== Mobile ===== */
+
+		@media(max-width:768px) {
+
+			.dashboard {
+				padding: 16px;
+			}
+
+
+			.dashboard__table {
+				display: block;
+				overflow-x: auto;
+			}
+
+
+			.dashboard__title h1 {
+				font-size: 24px;
+			}
+
+
+			.card__value {
+				font-size: 24px;
+			}
+
+		}
 	</style>
 
 	<div class="dashboard__header">
@@ -160,34 +315,68 @@
 		</div>
 		<div class="card">
 			<p class="card__label">Gains sur les retraits</p>
-			<p class="card__value"><?= esc($gainsRetrait ?? '0') ?> Ar</p>
+			<p class="card__value"><?= esc($gainRetrait['gain'] ?? '0') ?> Ar</p>
 		</div>
 		<div class="card">
 			<p class="card__label">Gains sur les transferts</p>
-			<p class="card__value"><?= esc($gainsTransfert ?? '0') ?> Ar</p>
+			<p class="card__value"><?= esc($gainTransfert['gain'] ?? '0') ?> Ar</p>
 		</div>
 		<div class="card">
 			<p class="card__label">Gains totaux</p>
-            <?php $gainTotal = $gainsRetrait+$gainsTransfert; ?>
-			<p class="card__value"><?= esc($gainTotal ?? '0') ?> Ar</p>
+			<p class="card__value"><?= esc($gainTotal['gain'] ?? '0') ?> Ar</p>
 		</div>
 	</div>
 
-	<div class="dashboard__section" id="gains">
-		<h2>Situation des gains via les frais</h2>
-		<div class="dashboard__metrics">
-			<div class="metric">
-				<span>Frais retrait</span>
-				<strong>Calculé à partir des tranches</strong>
-			</div>
-			<div class="metric">
-				<span>Frais transfert</span>
-				<strong>Calculé à partir des tranches</strong>
-			</div>
-			<div class="metric">
-				<span>Affichage</span>
-				<strong>Tableau de synthèse</strong>
-			</div>
-		</div>
+	<div class="dashboard__section" id="clients">
+
+		<h2>Situation des comptes clients</h2>
+
+		<table class="dashboard__table">
+
+			<thead>
+				<tr>
+					<th>Numéro téléphone</th>
+					<th>Solde disponible</th>
+				</tr>
+			</thead>
+
+
+			<tbody>
+
+				<?php if (!empty($liste)): ?>
+
+					<?php foreach ($liste as $client): ?>
+
+						<tr>
+							<td>
+								<?= esc($client['num_tel']) ?>
+							</td>
+
+							<td>
+								<?= number_format(
+									$client['montant_dispo'] ?? 0,
+									0,
+									',',
+									' '
+								) ?> Ar
+							</td>
+						</tr>
+
+					<?php endforeach; ?>
+
+				<?php else: ?>
+
+					<tr>
+						<td colspan="2">
+							Aucun client trouvé
+						</td>
+					</tr>
+
+				<?php endif; ?>
+
+			</tbody>
+
+		</table>
+
 	</div>
 </section>

@@ -13,16 +13,13 @@ class AdminController extends BaseController
         $fraisModel = new FraisModel();
 
         $adminData = [
+            'liste' => $utilisateurModel->getAllClients(),
             'clients' => $utilisateurModel->countClients(),
             'gainRetrait' => $fraisModel->getGainRetrait() ?? 0,
             'gainTransfert' => $fraisModel->getGainTransfert() ?? 0,
+            'gainTotal' => $fraisModel->getGainRetrait(),
         ];
 
-        $data = [
-            'title' => 'Accueil - Opérateur Mobile Money',
-            'content' => view('admin/dashboard', $adminData)
-        ];
-
-        return view('layout/main', $data);
+        return view('admin/dashboard', $adminData);
     }
 }

@@ -99,3 +99,6 @@ in SYSTEMPATH/CodeIgniter.php on line 1001.
  5 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  6 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
 DEBUG - 2026-07-20 09:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 10:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 10:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 10:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
