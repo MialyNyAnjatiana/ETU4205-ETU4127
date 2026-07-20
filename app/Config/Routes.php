@@ -23,4 +23,4 @@ $routes->get('/logout', 'UtilisateurController::logout');
 $routes->get('/login', 'Home::viewLogin');
 $routes->post('/login', 'Auth::login');
 
-$routes->get('/admin', 'Admin::index');
+$routes->get('/admin', 'AdminController::index');
