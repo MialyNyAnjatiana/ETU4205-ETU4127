@@ -79,11 +79,21 @@
         <div class="card">
             <h2>Effectuer un transfert</h2>
             <form method="post" action="<?= base_url('/client/transfert') ?>">                <div class="field">
-                    <label for="beneficiaire">Numéro du bénéficiaire</label>
-                    <input type="tel" id="beneficiaire" name="beneficiaire" placeholder="07XXXXXXXX" pattern="[0-9]{10}"
-                        required>
-                </div>
-                <label>
+                   <div class="field">
+    <label>
+        Numéros des bénéficiaires
+    </label>
+
+    <textarea
+        name="beneficiaires"
+        rows="4"
+        placeholder="0341234567, 0339876543, 0321111111"
+        required></textarea>
+
+    <small>
+        Séparez les numéros par une virgule.
+    </small>
+</div>
                     Gestion des frais
                 </label>
 
