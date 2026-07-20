@@ -33,7 +33,8 @@ class Exceptions extends BaseConfig
      *
      * @var list<int>
      */
-    public array $ignoreCodes = [404];
+    // Log 404 errors too so they appear in writable/logs
+    public array $ignoreCodes = [];
 
     /**
      * --------------------------------------------------------------------------

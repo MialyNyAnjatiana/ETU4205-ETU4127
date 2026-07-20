@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1784539622;_ci_previous_url|s:36:"http://localhost:8080/client/retrait";user|a:5:{s:2:"id";i:2;s:3:"nom";s:12:"Alice Rakoto";s:7:"num_tel";s:10:"0341234567";s:4:"role";s:6:"client";s:10:"created_at";s:19:"2026-07-20 08:05:00";}id_utilisateur|i:2;num_tel|s:10:"0341234567";role|s:6:"client";isLoggedIn|b:1;

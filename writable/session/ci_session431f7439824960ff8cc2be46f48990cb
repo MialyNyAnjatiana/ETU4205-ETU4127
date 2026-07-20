@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1784538940;_ci_previous_url|s:32:"http://localhost:8080/index.php/";user|a:5:{s:2:"id";i:2;s:3:"nom";s:12:"Alice Rakoto";s:7:"num_tel";s:10:"0341234567";s:4:"role";s:6:"client";s:10:"created_at";s:19:"2026-07-20 08:05:00";}error|s:45:"Veuillez entrer votre numéro de téléphone.";__ci_vars|a:1:{s:5:"error";s:3:"new";}

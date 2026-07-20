@@ -30,13 +30,24 @@
     <main>
         <div class="card">
             <h2>Faire un retrait</h2>
-            <form method="post" action="#">
-                <div class="field">
-                    <label for="montant">Montant (FCFA)</label>
-                    <input type="number" id="montant" name="montant" min="100" placeholder="Entrez le montant" required>
-                </div>
-                <button type="submit" class="button">Valider le retrait</button>
-            </form>
+          <form method="post" action="<?= base_url('/client/retrait') ?>">
+
+
+<div class="field">
+
+<label> Numéro du bénéficiaire</label>
+<input type="tel" name="beneficiaire" pattern="[0-9]{10}" required>
+</div>
+
+<div class="field">
+
+<label>Montant à envoyer</label>
+<input type="number" name="montant" min="100" required>
+        </div>
+
+            <button class="button">Envoyer</button>
+
+</form>
             <p>Cette page montre le formulaire de retrait. La logique de traitement doit être ajoutée côté contrôleur.</p>
         </div>
     </main>

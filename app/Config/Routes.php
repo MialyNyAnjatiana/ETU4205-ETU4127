@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'UtilisateurController::login');
 $routes->get('/login', 'UtilisateurController::login');
-$routes->post('/connexion', 'UtilisateurController::connexion');
+$routes->post('/login', 'UtilisateurController::connexion');
 
 $routes->get('/client/dashboard', 'UtilisateurController::dashboard');
 $routes->get('/admin/dashboard', 'UtilisateurController::adminDashboard');
@@ -20,7 +20,3 @@ $routes->get('/client/retrait', 'UtilisateurController::retrait');
 $routes->get('/client/transfert', 'UtilisateurController::transfert');
 $routes->get('/client/historique', 'UtilisateurController::historique');
 $routes->get('/logout', 'UtilisateurController::logout');
-$routes->get('/login', 'Home::viewLogin');
-$routes->post('/login', 'Auth::login');
-
-$routes->get('/admin', 'Admin::index');

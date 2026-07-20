@@ -35,6 +35,24 @@
                     <label for="beneficiaire">Numéro du bénéficiaire</label>
                     <input type="tel" id="beneficiaire" name="beneficiaire" placeholder="07XXXXXXXX" pattern="[0-9]{10}" required>
                 </div>
+                <label>
+Gestion des frais
+</label>
+
+
+<select name="frais">
+
+<option value="apart">
+Ajouter les frais en plus
+</option>
+
+
+<option value="inclus">
+Déduire les frais du montant envoyé
+</option>
+
+</select>
+
                 <div class="field">
                     <label for="montant">Montant (FCFA)</label>
                     <input type="number" id="montant" name="montant" min="100" placeholder="Entrez le montant" required>

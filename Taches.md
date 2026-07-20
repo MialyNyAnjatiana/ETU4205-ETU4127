@@ -15,34 +15,31 @@
     TypeOperationModel
 
 
-# Creation de controllers
-
-    AdminController
-        Fonctions :
+    UtilisateurController 
+        Fonctions : (4205)
                 Dashboard
                 Gestion des préfixes
                 Ajouter un préfixe
                 Modifier un préfixe
                 Supprimer un préfixe
 
-        Gestion des opérations :
+        Gestion des opérations : (4205)
                 Liste des types
                 Ajouter un type
                 Modifier
                 Supprimer
 
-        Gestion des frais :
+        Gestion des frais : (4205)
                 Ajouter une tranche
                 Modifier une tranche
                 Supprimer une tranche
 
-        Statistiques:
+        Statistiques: (4205)
                 Situation des comptes
                 Situation des gains
 
 
-# ClientController
-        Fonctions
+        Client (4127)
                 Accueil
                 Solde
                 Dépôt
@@ -50,16 +47,8 @@
                 Transfert
                 Historique
 
-# LoginController
-        Fonctions
-                Page login
-                Vérification numéro
-                Création automatique du compte
-                Connexion
 
-## Authentification
-
-## Login
+# Login (4127)
 
         Créer une page contenant :
                 numéro téléphone
