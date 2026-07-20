@@ -20,3 +20,7 @@ $routes->get('/client/retrait', 'UtilisateurController::retrait');
 $routes->get('/client/transfert', 'UtilisateurController::transfert');
 $routes->get('/client/historique', 'UtilisateurController::historique');
 $routes->get('/logout', 'UtilisateurController::logout');
+$routes->get('/login', 'Home::viewLogin');
+$routes->post('/login', 'Auth::login');
+
+$routes->get('/admin', 'Admin::index');
