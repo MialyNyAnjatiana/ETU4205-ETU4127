@@ -30,7 +30,9 @@ CREATE TABLE frais (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     valeur_min DECIMAL NOT NULL,
     valeur_max DECIMAL NOT NULL,
-    montant_frais DECIMAL NOT NULL
+    montant_frais DECIMAL NOT NULL,
+    id_type_operation INTEGER NOT NULL,
+    FOREIGN KEY (id_type_operation) REFERENCES type_operation(id) ON DELETE CASCADE
 );
 
 CREATE TABLE historique (
