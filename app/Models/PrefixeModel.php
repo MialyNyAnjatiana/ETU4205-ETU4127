@@ -8,21 +8,17 @@ class PrefixeModel extends Model
 {
     protected $table = 'prefixe';
     protected $primaryKey = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType = 'array';
-    protected $useSoftDeletes = false;
-    protected $protectFields = true;
+
     protected $allowedFields = [
-        'prefixe'
+        'valeur'
     ];
 
-    protected $validationRules = [
-        'prefixe' => 'required|min_length[2]|max_length[100]'
-    ];
+    protected $returnType = 'array';
 
-    
-    
-    protected $skipValidation = false;
+    protected $useTimestamps = false;
 
-
+    public function prefixeExiste($prefixe)
+{
+    return $this->where('valeur', $prefixe)->first();
+}
 }

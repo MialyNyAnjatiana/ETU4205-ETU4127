@@ -7,7 +7,7 @@ CREATE TABLE prefixe (
 
 CREATE TABLE utilisateur (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nom VARCHAR NOT NULL,
+    nom VARCHAR,
     num_tel VARCHAR(10) NOT NULL,
     role VARCHAR NOT NULL DEFAULT 'client' CHECK(role IN ('client', 'administrateur')),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
