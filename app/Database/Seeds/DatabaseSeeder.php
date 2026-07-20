@@ -31,10 +31,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->db->table('frais')->insertBatch([
-            ['valeur_min' => 0, 'valeur_max' => 1000, 'montant_frais' => 50],
-            ['valeur_min' => 1001, 'valeur_max' => 5000, 'montant_frais' => 100],
-            ['valeur_min' => 5001, 'valeur_max' => 20000, 'montant_frais' => 200],
-            ['valeur_min' => 20001, 'valeur_max' => 1000000, 'montant_frais' => 500],
+            ['valeur_min' => 0, 'valeur_max' => 1000, 'montant_frais' => 0, 'id_type_operation' => 1],
+            ['valeur_min' => 1001, 'valeur_max' => 5000, 'montant_frais' => 0, 'id_type_operation' => 1],
+            ['valeur_min' => 5001, 'valeur_max' => 20000, 'montant_frais' => 0, 'id_type_operation' => 1],
+            ['valeur_min' => 20001, 'valeur_max' => 1000000, 'montant_frais' => 0, 'id_type_operation' => 1],
+            ['valeur_min' => 0, 'valeur_max' => 1000, 'montant_frais' => 50, 'id_type_operation' => 2],
+            ['valeur_min' => 1001, 'valeur_max' => 5000, 'montant_frais' => 100, 'id_type_operation' => 2],
+            ['valeur_min' => 5001, 'valeur_max' => 20000, 'montant_frais' => 200, 'id_type_operation' => 2],
+            ['valeur_min' => 20001, 'valeur_max' => 1000000, 'montant_frais' => 500, 'id_type_operation' => 2],
+            ['valeur_min' => 0, 'valeur_max' => 1000, 'montant_frais' => 50, 'id_type_operation' => 3],
+            ['valeur_min' => 1001, 'valeur_max' => 5000, 'montant_frais' => 100, 'id_type_operation' => 3],
+            ['valeur_min' => 5001, 'valeur_max' => 20000, 'montant_frais' => 200, 'id_type_operation' => 3],
+            ['valeur_min' => 20001, 'valeur_max' => 1000000, 'montant_frais' => 500, 'id_type_operation' => 3],
         ]);
 
         $this->db->table('utilisateur')->insertBatch([

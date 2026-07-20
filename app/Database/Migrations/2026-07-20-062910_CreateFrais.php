@@ -13,7 +13,10 @@ class CreateFrais extends Migration
             'valeur_min' => ['type' => 'DECIMAL'],
             'valeur_max' => ['type' => 'DECIMAL'],
             'montant_frais' => ['type' => 'DECIMAL'],
+            'id_type_operation' => ['type' => 'INTEGER'],
         ]);
+
+        $this->forge->addForeignKey('id_type_operation', 'type_operation', 'id');
 
         $this->forge->addKey('id', true);
 

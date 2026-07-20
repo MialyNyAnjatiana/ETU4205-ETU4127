@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ===== Navbar ===== */
+
+.navbar {
+    background: #0d6efd;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 15px;
+}
+
+
+/* ===== Card ===== */
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+/* ===== Forms ===== */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+
+button,
+.btn {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background: #0b5ed7;
+}
+
+
+/* ===== Login ===== */
+
+.login-box {
+    width: 350px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* ===== Table ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: #0d6efd;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+
+/* ===== Alerts ===== */
+
+.alert {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+
+/* ===== Dashboard ===== */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+
+/* ===== Footer ===== */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+
+/* ===== Responsive ===== */
+
+@media(max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .login-box {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
