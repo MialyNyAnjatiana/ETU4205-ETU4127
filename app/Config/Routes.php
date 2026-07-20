@@ -10,7 +10,7 @@ $routes->get('/login', 'UtilisateurController::login');
 $routes->post('/login', 'UtilisateurController::connexion');
 
 $routes->get('/client/dashboard', 'UtilisateurController::dashboard');
-$routes->get('/admin/dashboard', 'UtilisateurController::adminDashboard');
+$routes->get('/admin/dashboard', 'AdminController::index');
 $routes->get('/client/solde', 'UtilisateurController::voirSolde');
 
 $routes->get('/client/depot', 'UtilisateurController::depot');
