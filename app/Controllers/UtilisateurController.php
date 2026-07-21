@@ -50,6 +50,7 @@ class UtilisateurController extends BaseController
         $prefixe = substr($numero, 0, 3);
         $prefixeExiste = $this->prefixeModel
             ->where('valeur', $prefixe)
+            ->where('id_operateur', null)
             ->first();
 
         if (!$prefixeExiste) {
