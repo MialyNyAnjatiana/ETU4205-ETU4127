@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dépôt client</title>
-    <link rel="stylesheet" href="/assets/css/style.css"></head>
-<body>
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    
+    <body>
     <div class="app">
         <nav class="navbar">
             <a href="<?= base_url('/client/dashboard') ?>" class="navbar__logo">MonEspace</a>
