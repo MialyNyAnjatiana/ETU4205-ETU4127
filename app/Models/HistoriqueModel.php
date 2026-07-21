@@ -55,6 +55,12 @@ public function getHistoriqueUtilisateur($idUtilisateur)
             ->getRowArray();
     }
 
+    public function getGainTotal() {
+        return $this->selectSum('frais', 'gain')
+            ->get()
+            ->getRowArray();
+    }
+
     public function getGainParOperateur()
 {
     return $this->db->table('historique h')

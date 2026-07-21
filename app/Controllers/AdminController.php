@@ -12,12 +12,16 @@ class AdminController extends BaseController
         $utilisateurModel = new UtilisateurModel();
         $historiqueModel = new HistoriqueModel();
 
+        $gainRetrait = $historiqueModel->getGainRetrait();
+        $gainTransfert = $historiqueModel->getGainTransfert();
+        $gainTotal = $historiqueModel->getGainTotal();
+
         $adminData = [
             'liste' => $utilisateurModel->getAllClients(),
             'clients' => $utilisateurModel->countClients(),
-            'gainRetrait' => $historiqueModel->getGainRetrait() ?? 0,
-            'gainTransfert' => $historiqueModel->getGainTransfert() ?? 0,
-            'gainTotal' => $historiqueModel->getGainRetrait(),
+            'gainRetrait' => $gainRetrait ?? 0,
+            'gainTransfert' => $gainTransfert ?? 0,
+            'gainTotal' => $gainTotal ?? 0,
             'gainOperateurs' => $historiqueModel->getGainParOperateur(),
         ];
 
