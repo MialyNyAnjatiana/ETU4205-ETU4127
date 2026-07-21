@@ -17,6 +17,7 @@
                 <li><a href="<?= base_url('/client/retrait') ?>">Retrait</a></li>
                 <li><a href="<?= base_url('/client/transfert') ?>">Transfert</a></li>
                 <li><a href="<?= base_url('/client/historique') ?>">Historique</a></li>
+                <li><a href="<?= base_url('/client/epargne') ?>">Epargne</a></li>
             </ul>
             <div class="navbar__actions">
                 <a href="<?= base_url('/logout') ?>" class="navbar__button">Déconnexion</a>

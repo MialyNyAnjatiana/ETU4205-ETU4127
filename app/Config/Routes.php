@@ -43,3 +43,6 @@ $routes->get('/admin/operateurs', 'OperateurController::index');
 $routes->post('/admin/operateurs/update/(:num)', 'OperateurController::update/$1');
 $routes->post('/admin/operateurs/add', 'OperateurController::add');
 $routes->get('/admin/operateurs/delete/(:num)', 'OperateurController::delete/$1');
+
+$routes->post('/client/epargne', 'UtilisateurController::epargne');
+$routes->get('/client/epargne', 'UtilisateurController::epargne');

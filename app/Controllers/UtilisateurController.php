@@ -9,6 +9,7 @@ use App\Models\TypeOperationModel;
 use App\Models\FraisModel;
 use App\Models\PrefixeModel;
 use App\Models\PromotionModel;
+use App\Models\EpargneModel;
 
 class UtilisateurController extends BaseController
 {
@@ -19,6 +20,7 @@ class UtilisateurController extends BaseController
     protected $fraisModel;
     protected $prefixeModel;
     protected $promotionModel;
+        protected $epargneModel;
 
 
     public function __construct()
@@ -30,6 +32,7 @@ class UtilisateurController extends BaseController
         $this->fraisModel = new FraisModel();
         $this->prefixeModel = new PrefixeModel();
         $this->promotionModel = new PromotionModel();
+                $this->epargneModel = new EpargneModel();
     }
 
     public function login()
@@ -235,7 +238,6 @@ class UtilisateurController extends BaseController
         if (!session()->get('isLoggedIn')) {
             return redirect()->to('/login');
         }
-
         $promotion = $this->promotionModel->getPromotion();
 
         if ($this->request->getMethod() === 'GET') {
@@ -305,6 +307,7 @@ class UtilisateurController extends BaseController
             }
         }
 
+
         if ($soldeExp['montant_dispo'] < $debitTotal) {
             return redirect()->back()->with('error', 'Solde insuffisant.');
         }
@@ -327,6 +330,22 @@ class UtilisateurController extends BaseController
             }
 
             $soldeDest = $this->soldeModel->getSolde($destinataire['id']);
+
+            if(!$this->epargneModel->getEpargneById($destinataire['id'])) {
+
+        $this->update($epargne['idUtilisateur'], [
+            'montant_dispo' => $nouveauMontant,
+            'date_maj' => date('Y-m-d H:i:s')
+        ]);
+    } else {
+        $this->insert([
+            'id_utilisateur' => $idUtilisateur,
+            'montant_dispo' => $nouveauMontant,
+            'date_maj' => date('Y-m-d H:i:s')
+        ]); 
+    }
+        
+            }
 
             $this->soldeModel->updateSolde(
                 $destinataire['id'],
@@ -365,6 +384,28 @@ class UtilisateurController extends BaseController
         return view('client/historique', [
             'historique' => $historique
         ]);
+    }
+
+    public function epargne() {
+                if (!session()->get('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+                if ($this->request->getMethod() === 'GET') {
+            return view('client/epargne');
+        }
+        $idUtilisateur = session()->get('id_utilisateur');
+        $pourcentageEpargne = (float) $this->request->getPost('epargne');
+                if ($pourcentageEpargne <= 0) {
+            return redirect()->back()->with('error', 'Montant invalide.');
+        }
+
+
+        $this->epargneModel->updateEpargne($idUtilisateur, $pourcentageEpargne);
+
+        $soldeData = $this->soldeModel->getSolde($idUtilisateur);
+        $solde = isset($soldeData['montant_dispo']) ? (float) $soldeData['montant_dispo'] : 0;
+        return view('client/dashboard', ['solde' => $solde]);
+
     }
 
 

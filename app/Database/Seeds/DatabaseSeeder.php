@@ -185,6 +185,15 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+                $this->db->table('epargne')->insertBatch([
+            [
+                'id' => 1,
+                'idUtilisateur' => 2,
+                'pourcentage' => 10,
+                'montant' => 0,
+            ],
+        ]);
+
         $this->db->transComplete();
     }
 }

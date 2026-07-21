@@ -61,3 +61,10 @@ CREATE TABLE promotion (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     pourcentage DECIMAL(5,2)
 );
+
+CREATE TABLE epargne (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    idUtilisateur INTEGER NOT NULL,
+    pourcentage DECIMAL(5,2),
+    montant INTEGER
+);

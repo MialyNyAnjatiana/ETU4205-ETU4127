@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dépôt client</title>
+    <title>Epargne client</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     
     <body>
@@ -25,21 +25,20 @@
 
         <div class="dashboard__header">
             <div class="dashboard__title">
-                <h1>Dépôt</h1>
-                <p>Créditez votre compte en toute sécurité.</p>
+                <h1>Epargne</h1>
+                <p>Inserer le pourcentage d'epargne</p>
             </div>
         </div>
 
         <div class="card" style="max-width:600px;">
-            <h2>Faire un dépôt</h2>
-            <form method="post" action="<?= base_url('/client/depot') ?>" class="form">
+            <h2>Pourcentage d'epargne</h2>
+            <form method="post" action="<?= base_url('/client/epargne') ?>" class="form">
                 <div class="form__group">
-                    <label for="montant">Montant (Ar)</label>
-                    <input type="number" id="montant" name="montant" min="100" placeholder="Entrez le montant" required>
+                    <label for="epargne">Pourcentage</label>
+                    <input type="number" id="epargne" name="epargne" placeholder="Entrez le pourcentage" required>
                 </div>
-                <button type="submit" class="dashboard__button" style="align-self:flex-start;">Valider le dépôt</button>
+                <button type="submit" class="dashboard__button" style="align-self:flex-start;">Valider</button>
             </form>
-            <p style="margin-top:20px; color:#6b7280; font-size:14px;">Cette page affiche un formulaire de dépôt. L’action du formulaire doit être implémentée côté contrôleur.</p>
         </div>
     </div>
 </body>
