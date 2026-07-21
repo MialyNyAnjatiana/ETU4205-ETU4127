@@ -64,3 +64,401 @@ DEBUG - 2026-07-21 06:42:08 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2026-07-21 06:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-21 06:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-21 06:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 06:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 06:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 06:56:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 06:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 06:56:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 06:56:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-21 06:59:24 --> UNIQUE constraint failed: operateur.id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(20): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 06:59:24 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(63): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 06:59:24 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(145): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:00:31 --> UNIQUE constraint failed: operateur.id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(20): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:00:31 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(63): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:00:31 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(145): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-07-21 07:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-21 07:21:45 --> no such table: promotion
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,30)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,30)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,30)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,30)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(181): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-07-21 07:34:56 --> Error: Class "App\Controllers\PromotionModel" not found
+[Method: GET, Route: client/transfert]
+in APPPATH/Controllers/UtilisateurController.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(921): App\Controllers\UtilisateurController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+CRITICAL - 2026-07-21 07:35:06 --> Error: Class "App\Controllers\PromotionModel" not found
+[Method: GET, Route: logout]
+in APPPATH/Controllers/UtilisateurController.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(921): App\Controllers\UtilisateurController->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-21 07:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 07:38:42 --> TypeError: Unsupported operand types: int * array
+[Method: POST, Route: client/transfert]
+in APPPATH/Controllers/UtilisateurController.php on line 284.
+ 1 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UtilisateurController->transfert()
+ 2 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UtilisateurController))
+ 3 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-21 07:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:40:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-21 07:41:11 --> UNIQUE constraint failed: operateur.id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(20): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:41:11 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(63): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:41:11 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(130): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:41:11 --> UNIQUE constraint failed: promotion.id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(181): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-07-21 07:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-21 07:41:23 --> UNIQUE constraint failed: operateur.id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `operateur` (`id`, `nom`, `pourcentage_comission`)
+VALUES (1,\'Orange\',2), (2,\'Airtel\',2), (3,\'Yas\',2)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(20): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:41:23 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `frais` (`id_type_operation`, `montant_frais`, `valeur_max`, `valeur_min`)
+VALUES (1,0,1000,0), (1,0,5000,1001), (1,0,20000,5001), (1,0,1000000,20001), (2,50,1000,0), (2,100,5000,1001), (2,200,20000,5001), (2,500,1000000,20001), (3,50,1000,0), (3,100,5000,1001), (3,200,20000,5001), (3,500,1000000,20001)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(63): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:41:23 --> FOREIGN KEY constraint failed
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `historique` (`date_historique`, `frais`, `id`, `id_type_operation`, `id_utilisateur`, `montant`)
+VALUES (\'2026-07-20 09:00:00\',0,1,1,2,250000), (\'2026-07-20 09:15:00\',0,2,1,3,125000), (\'2026-07-20 09:30:00\',0,3,1,4,50000), (\'2026-07-20 10:00:00\',500,4,2,2,30000), (\'2026-07-20 10:30:00\',1000,5,2,3,80000), (\'2026-07-20 11:00:00\',300,6,3,4,45000)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(130): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-07-21 07:41:23 --> UNIQUE constraint failed: promotion.id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `promotion` (`id`, `pourcentage`)
+VALUES (1,50)', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(181): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-07-21 07:41:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 07:48:51 --> ErrorException: Undefined variable $promotion
+[Method: GET, Route: client/transfert]
+in APPPATH/Views/client/transfert.php on line 37.
+ 1 APPPATH/Views/client/transfert.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $promotion', '/opt/lampp/htdocs/s4/ETU4205-ETU4127/app/Views/client/transfert.php', 37)
+ 2 SYSTEMPATH/View/View.php(240): include('/opt/lampp/htdocs/s4/ETU4205-ETU4127/app/Views/client/transfert.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/transfert', [], true)
+ 5 APPPATH/Controllers/UtilisateurController.php(243): view('client/transfert', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UtilisateurController->transfert()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UtilisateurController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-21 07:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 07:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 07:48:58 --> ErrorException: Undefined variable $promotion
+[Method: GET, Route: client/transfert]
+in APPPATH/Views/client/transfert.php on line 37.
+ 1 APPPATH/Views/client/transfert.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $promotion', '/opt/lampp/htdocs/s4/ETU4205-ETU4127/app/Views/client/transfert.php', 37)
+ 2 SYSTEMPATH/View/View.php(240): include('/opt/lampp/htdocs/s4/ETU4205-ETU4127/app/Views/client/transfert.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/transfert', [], true)
+ 5 APPPATH/Controllers/UtilisateurController.php(243): view('client/transfert', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\UtilisateurController->transfert()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UtilisateurController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/s4/ETU4205-ETU4127/public/index.php')
+DEBUG - 2026-07-21 07:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

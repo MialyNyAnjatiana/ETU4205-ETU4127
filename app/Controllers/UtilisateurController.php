@@ -8,6 +8,7 @@ use App\Models\HistoriqueModel;
 use App\Models\TypeOperationModel;
 use App\Models\FraisModel;
 use App\Models\PrefixeModel;
+use App\Models\PromotionModel;
 
 class UtilisateurController extends BaseController
 {
@@ -17,6 +18,8 @@ class UtilisateurController extends BaseController
     protected $typeOperationModel;
     protected $fraisModel;
     protected $prefixeModel;
+    protected $promotionModel;
+
 
     public function __construct()
     {
@@ -26,14 +29,13 @@ class UtilisateurController extends BaseController
         $this->typeOperationModel = new TypeOperationModel();
         $this->fraisModel = new FraisModel();
         $this->prefixeModel = new PrefixeModel();
+        $this->promotionModel = new PromotionModel();
     }
-
 
     public function login()
     {
         return view('login');
     }
-
 
     public function connexion()
     {
@@ -234,8 +236,11 @@ class UtilisateurController extends BaseController
             return redirect()->to('/login');
         }
 
+        $promotion = $this->promotionModel->getPromotion();
+
         if ($this->request->getMethod() === 'GET') {
-            return view('client/transfert');
+
+            return view('client/transfert', $promotion);
         }
 
         $liste = trim($this->request->getPost('beneficiaires'));
@@ -254,6 +259,8 @@ class UtilisateurController extends BaseController
 
         $idExpediteur = session()->get('id_utilisateur');
 
+
+
         $soldeExp = $this->soldeModel->getSolde($idExpediteur);
 
         if (!$soldeExp) {
@@ -271,10 +278,14 @@ class UtilisateurController extends BaseController
         $partMontant = $montant / count($numeros);
 
 
-
         $frais = $this->fraisModel->getFrais($montant, $type['id']);
 
         $montantFrais = $frais ? $frais['montant_frais'] : 0;
+
+        if ($promotion > 0) {
+            $montantPromo = $montantFrais * $promotion['pourcentage']/100;
+            $montantFrais -= $montantPromo;
+        }
 
         $partFrais = $montantFrais / count($numeros);
 

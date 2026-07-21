@@ -56,3 +56,8 @@ CREATE TABLE operateurs (
     nom VARCHAR NOT NULL,
     pourcentage_commission DECIMAL(5,2) NOT NULL
 );
+
+CREATE TABLE promotion (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    pourcentage DECIMAL(5,2)
+);

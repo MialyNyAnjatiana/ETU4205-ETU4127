@@ -34,6 +34,7 @@
             <form method="post" action="<?= base_url('/client/transfert') ?>" class="form">
                 <div class="form__group">
                     <label for="beneficiaires">Numéros des bénéficiaires</label>
+                    
                     <textarea id="beneficiaires" name="beneficiaires" rows="4" placeholder="0341234567, 0339876543, 0321111111" required></textarea>
                     <small>Séparez les numéros par une virgule.</small>
                 </div>

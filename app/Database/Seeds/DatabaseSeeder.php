@@ -93,14 +93,14 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 3,
                 'nom' => 'Bob Razaf',
-                'num_tel' => '0351234567',
+                'num_tel' => '0351234556',
                 'role' => 'client',
                 'created_at' => '2026-07-20 08:10:00',
             ],
             [
                 'id' => 4,
                 'nom' => 'Charlie Andry',
-                'num_tel' => '0351234567',
+                'num_tel' => '0351234456',
                 'role' => 'client',
                 'created_at' => '2026-07-20 08:15:00',
             ],
@@ -175,6 +175,13 @@ class DatabaseSeeder extends Seeder
                 'frais' => 300,
                 'id_type_operation' => 3,
                 'date_historique' => '2026-07-20 11:00:00',
+            ],
+        ]);
+
+        $this->db->table('promotion')->insertBatch([
+            [
+                'id' => 1,
+                'pourcentage' => 50,
             ],
         ]);
 
