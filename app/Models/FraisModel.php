@@ -12,7 +12,8 @@ class FraisModel extends Model
     protected $allowedFields = [
         'valeur_min',
         'valeur_max',
-        'montant_frais'
+        'montant_frais',
+        'id_type_operation'
     ];
 
     protected $returnType = 'array';
@@ -34,36 +35,6 @@ public function getFrais($montant, $idTypeOperation)
     {
         parent::__construct();
         $this->db = \Config\Database::connect();
-    }
-
-    public function getGainRetrait()
-    {
-        return $this->db->table('historique h')
-            ->selectSum('f.montant_frais', 'gain')
-            ->join(
-                'frais f',
-                'h.id_type_operation = f.id_type_operation
-             AND h.montant >= f.valeur_min
-             AND h.montant <= f.valeur_max'
-            )
-            ->where('h.id_type_operation', 2)
-            ->get()
-            ->getRowArray();
-    }
-
-    public function getGainTransfert()
-    {
-        return $this->db->table('historique h')
-            ->selectSum('f.montant_frais', 'gain')
-            ->join(
-                'frais f',
-                'h.id_type_operation = f.id_type_operation
-             AND h.montant >= f.valeur_min
-             AND h.montant <= f.valeur_max'
-            )
-            ->where('h.id_type_operation', 3)
-            ->get()
-            ->getRowArray();
     }
 
     public static function getFraisByOperation($idTypeOperation)

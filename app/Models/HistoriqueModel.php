@@ -38,4 +38,33 @@ public function getHistoriqueUtilisateur($idUtilisateur)
         ->getResultArray();
 }
 
+    public function getGainRetrait()
+    {
+        return $this->selectSum('frais', 'gain')
+            ->where('id_type_operation', 2)
+            ->get()
+            ->getRowArray();
+    }
+
+
+    public function getGainTransfert()
+    {
+        return $this->selectSum('frais', 'gain')
+            ->where('id_type_operation', 3)
+            ->get()
+            ->getRowArray();
+    }
+
+    public function getGainParOperateur()
+{
+    return $this->db->table('historique h')
+        ->select("o.nom as operateur, SUM(h.frais) as gain")
+        ->join('utilisateur u', 'u.id = h.id_utilisateur')
+        ->join('prefixe p', 'SUBSTR(u.num_tel,1,3) = p.valeur')
+        ->join('operateur o', 'o.id = p.id_operateur')
+        ->where('o.id IS NOT NULL')
+        ->groupBy('o.id')
+        ->get()
+        ->getResultArray();
+}
 }

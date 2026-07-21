@@ -7,19 +7,26 @@ use CodeIgniter\Model;
 class PrefixeModel extends Model
 {
     protected $table = 'prefixe';
-    protected $primaryKey = 'id';
 
-    protected $allowedFields = [
-        'valeur'
-    ];
+    protected $primaryKey = 'id';
 
     protected $returnType = 'array';
 
-    protected $useTimestamps = false;
+    protected $allowedFields = [
+        'valeur',
+        'id_operateur'
+    ];
 
-    public function prefixeExiste($prefixe)
+
+    public function getAllPrefixes()
     {
-        return $this->where('valeur', $prefixe)->first();
+        return $this->select('prefixe.*, operateur.nom as operateur')
+            ->join(
+                'operateur',
+                'operateur.id = prefixe.id_operateur',
+                'left'
+            )
+            ->findAll();
     }
 
         public function getOperateurByNumero($numero)

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\FraisModel;
+use App\Models\HistoriqueModel;
 use App\Models\UtilisateurModel;
 
 class AdminController extends BaseController
@@ -10,14 +10,15 @@ class AdminController extends BaseController
     public function index(): string
     {
         $utilisateurModel = new UtilisateurModel();
-        $fraisModel = new FraisModel();
+        $historiqueModel = new HistoriqueModel();
 
         $adminData = [
             'liste' => $utilisateurModel->getAllClients(),
             'clients' => $utilisateurModel->countClients(),
-            'gainRetrait' => $fraisModel->getGainRetrait() ?? 0,
-            'gainTransfert' => $fraisModel->getGainTransfert() ?? 0,
-            'gainTotal' => $fraisModel->getGainRetrait(),
+            'gainRetrait' => $historiqueModel->getGainRetrait() ?? 0,
+            'gainTransfert' => $historiqueModel->getGainTransfert() ?? 0,
+            'gainTotal' => $historiqueModel->getGainRetrait(),
+            'gainOperateurs' => $historiqueModel->getGainParOperateur(),
         ];
 
         return view('admin/dashboard', $adminData);
