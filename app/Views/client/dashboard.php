@@ -2,44 +2,48 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard client</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f8; color: #222; }
-        header { background: #124e8c; color: #fff; padding: 1rem; }
-        nav a { color: #fff; margin-right: 1rem; text-decoration: none; }
-        main { padding: 2rem; }
-        .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 1.5rem; margin-bottom: 1rem; }
-        .actions a { display: inline-block; margin-right: .75rem; margin-bottom: .5rem; padding: .65rem 1rem; background: #124e8c; color: #fff; border-radius: 6px; text-decoration: none; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord client</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 </head>
 <body>
-    <header>
-        <h1>Tableau de bord client</h1>
-        <nav>
-            <a href="<?= base_url('/client/dashboard') ?>">Accueil</a>
-            <a href="<?= base_url('/client/solde') ?>">Solde</a>
-            <a href="<?= base_url('/client/depot') ?>">Dépôt</a>
-            <a href="<?= base_url('/client/retrait') ?>">Retrait</a>
-            <a href="<?= base_url('/client/transfert') ?>">Transfert</a>
-            <a href="<?= base_url('/client/historique') ?>">Historique</a>
-            <a href="<?= base_url('/logout') ?>">Déconnexion</a>
+    <div class="app">
+        <nav class="navbar">
+            <a href="<?= base_url('/client/dashboard') ?>" class="navbar__logo">MonEspace</a>
+            <ul class="navbar__links">
+                <li><a href="<?= base_url('/client/dashboard') ?>" class="active">Accueil</a></li>
+                <li><a href="<?= base_url('/client/solde') ?>">Solde</a></li>
+                <li><a href="<?= base_url('/client/depot') ?>">Dépôt</a></li>
+                <li><a href="<?= base_url('/client/retrait') ?>">Retrait</a></li>
+                <li><a href="<?= base_url('/client/transfert') ?>">Transfert</a></li>
+                <li><a href="<?= base_url('/client/historique') ?>">Historique</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <a href="<?= base_url('/logout') ?>" class="navbar__button">Déconnexion</a>
+            </div>
         </nav>
-    </header>
-    <main>
-        <div class="card">
-            <h2>Bonjour, <?= esc(session()->get('num_tel')) ?: 'utilisateur' ?></h2>
-            <p>Bienvenue sur votre espace client. Vous pouvez consulter votre solde et effectuer des opérations depuis les liens ci-dessus.</p>
+
+        <div class="dashboard__header">
+            <div class="dashboard__title">
+                <h1>Bonjour, <?= esc(session()->get('nom') ?: session()->get('num_tel')) ?: 'utilisateur' ?></h1>
+                <p>Bienvenue sur votre espace client. Gérez vos opérations en toute simplicité.</p>
+            </div>
         </div>
-        <div class="card">
-            <h3>Solde disponible</h3>
-            <p style="font-size: 2rem; font-weight: bold;"><?= isset($solde) ? esc(number_format($solde, 0, ',', ' ')) . ' Ar' : 'N/A' ?></p>
+
+        <div class="dashboard__grid">
+            <div class="card">
+                <p class="card__label">Solde disponible</p>
+                <p class="card__value"><?= isset($solde) ? esc(number_format($solde, 0, ',', ' ')) . ' Ar' : '0 Ar' ?></p>
+            </div>
         </div>
-        <div class="card actions">
-            <a href="<?= base_url('/client/solde') ?>">Voir le solde</a>
-            <a href="<?= base_url('/client/depot') ?>">Faire un dépôt</a>
-            <a href="<?= base_url('/client/retrait') ?>">Faire un retrait</a>
-            <a href="<?= base_url('/client/transfert') ?>">Faire un transfert</a>
+
+        <div class="dashboard__actions">
+            <a href="<?= base_url('/client/solde') ?>" class="dashboard__button">Voir le solde</a>
+            <a href="<?= base_url('/client/depot') ?>" class="dashboard__button dashboard__button--secondary">Faire un dépôt</a>
+            <a href="<?= base_url('/client/retrait') ?>" class="dashboard__button dashboard__button--accent">Faire un retrait</a>
+            <a href="<?= base_url('/client/transfert') ?>" class="dashboard__button dashboard__button--dark">Faire un transfert</a>
         </div>
-    </main>
+
+    </div>
 </body>
 </html>

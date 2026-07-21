@@ -269,6 +269,8 @@ class UtilisateurController extends BaseController
 
         $partMontant = $montant / count($numeros);
 
+        
+
         $frais = $this->fraisModel->getFrais($montant, $type['id']);
 
         $montantFrais = $frais ? $frais['montant_frais'] : 0;
