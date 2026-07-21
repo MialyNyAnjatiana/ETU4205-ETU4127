@@ -19,7 +19,7 @@ class UtilisateurModel extends Model
     protected $useTimestamps = false;
 
 
-  
+
     public function estAdministrateur($userId)
     {
         $user = $this->find($userId);
@@ -30,8 +30,8 @@ class UtilisateurModel extends Model
     public function getAllClients()
     {
         return $this->where('role', 'client')
-                    ->join('solde', 'utilisateur.id = solde.id_utilisateur')
-                    ->findAll();
+            ->join('solde', 'utilisateur.id = solde.id_utilisateur')
+            ->findAll();
     }
 
     public function countClients()
@@ -40,8 +40,8 @@ class UtilisateurModel extends Model
     }
 
     public function getByNumero($numero)
-{
-    return $this->where('num_tel', $numero)->first();
-}
+    {
+        return $this->where('num_tel', $numero)->first();
+    }
 
 }

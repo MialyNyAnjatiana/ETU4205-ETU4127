@@ -182,7 +182,7 @@ class UtilisateurController extends BaseController
                 ->with('error', 'Solde introuvable.');
         }
 
-                $type = $this->typeOperationModel
+        $type = $this->typeOperationModel
             ->where('nom', 'Retrait')
             ->first();
 
@@ -269,7 +269,7 @@ class UtilisateurController extends BaseController
 
         $partMontant = $montant / count($numeros);
 
-        
+
 
         $frais = $this->fraisModel->getFrais($montant, $type['id']);
 
