@@ -21,4 +21,14 @@ class PrefixeModel extends Model
     {
         return $this->where('valeur', $prefixe)->first();
     }
+
+        public function getOperateurByNumero($numero)
+{
+    $prefixe = substr($numero, 0, 3);
+
+    return $this->select('prefixe.*, operateur.nom')
+        ->join('operateur', 'operateur.id = prefixe.id_operateur')
+        ->where('prefixe.valeur', $prefixe)
+        ->first();
+}
 }
