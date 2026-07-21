@@ -1,125 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transfert client</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f8;
-            color: #222;
-        }
-
-        header {
-            background: #124e8c;
-            color: #fff;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: #fff;
-            margin-right: 1rem;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 2rem;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-            padding: 1.5rem;
-        }
-
-        .field {
-            margin-bottom: 1rem;
-        }
-
-        .field label {
-            display: block;
-            margin-bottom: .5rem;
-        }
-
-        .field input {
-            width: 100%;
-            padding: .75rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        .button {
-            background: #124e8c;
-            color: #fff;
-            padding: .85rem 1.25rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-
+    <link rel="stylesheet" href="/assets/css/style.css"></head>
 <body>
-    <header>
-        <h1>Transfert</h1>
-        <nav>
-            <a href="<?= base_url('/client/dashboard') ?>">Accueil</a>
-            <a href="<?= base_url('/client/solde') ?>">Solde</a>
-            <a href="<?= base_url('/client/depot') ?>">Dépôt</a>
-            <a href="<?= base_url('/client/retrait') ?>">Retrait</a>
-            <a href="<?= base_url('/client/historique') ?>">Historique</a>
-            <a href="<?= base_url('/logout') ?>">Déconnexion</a>
+    <div class="app">
+        <nav class="navbar">
+            <a href="<?= base_url('/client/dashboard') ?>" class="navbar__logo">MonEspace</a>
+            <ul class="navbar__links">
+                <li><a href="<?= base_url('/client/dashboard') ?>">Accueil</a></li>
+                <li><a href="<?= base_url('/client/solde') ?>">Solde</a></li>
+                <li><a href="<?= base_url('/client/depot') ?>">Dépôt</a></li>
+                <li><a href="<?= base_url('/client/retrait') ?>">Retrait</a></li>
+                <li><a href="<?= base_url('/client/transfert') ?>" class="active">Transfert</a></li>
+                <li><a href="<?= base_url('/client/historique') ?>">Historique</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <a href="<?= base_url('/logout') ?>" class="navbar__button">Déconnexion</a>
+            </div>
         </nav>
-    </header>
-    <main>
-        <div class="card">
+
+        <div class="dashboard__header">
+            <div class="dashboard__title">
+                <h1>Transfert</h1>
+                <p>Envoyez de l'argent à un ou plusieurs bénéficiaires.</p>
+            </div>
+        </div>
+
+        <div class="card" style="max-width:700px;">
             <h2>Effectuer un transfert</h2>
-            <form method="post" action="<?= base_url('/client/transfert') ?>">                <div class="field">
-                   <div class="field">
-    <label>
-        Numéros des bénéficiaires
-    </label>
+            <form method="post" action="<?= base_url('/client/transfert') ?>" class="form">
+                <div class="form__group">
+                    <label for="beneficiaires">Numéros des bénéficiaires</label>
+                    <textarea id="beneficiaires" name="beneficiaires" rows="4" placeholder="0341234567, 0339876543, 0321111111" required></textarea>
+                    <small>Séparez les numéros par une virgule.</small>
+                </div>
 
-    <textarea
-        name="beneficiaires"
-        rows="4"
-        placeholder="0341234567, 0339876543, 0321111111"
-        required></textarea>
+                <div class="form__group">
+                    <label for="frais">Gestion des frais</label>
+                    <select id="frais" name="frais">
+                        <option value="apart">Ajouter les frais en plus</option>
+                        <option value="inclus">Déduire les frais du montant envoyé</option>
+                    </select>
+                </div>
 
-    <small>
-        Séparez les numéros par une virgule.
-    </small>
-</div>
-                    Gestion des frais
-                </label>
-
-
-                <select name="frais">
-
-                    <option value="apart">
-                        Ajouter les frais en plus
-                    </option>
-
-
-                    <option value="inclus">
-                        Déduire les frais du montant envoyé
-                    </option>
-
-                </select>
-
-                <div class="field">
+                <div class="form__group">
                     <label for="montant">Montant (Ar)</label>
                     <input type="number" id="montant" name="montant" min="100" placeholder="Entrez le montant" required>
                 </div>
-                <button type="submit" class="button">Valider le transfert</button>
-            </form>
-            <p>Ce formulaire est prêt pour l’implémentation de la logique de transfert.</p>
-        </div>
-    </main>
-</body>
 
+                <button type="submit" class="dashboard__button dashboard__button--dark" style="align-self:flex-start;">Valider le transfert</button>
+            </form>
+            <p style="margin-top:20px; color:#6b7280; font-size:14px;">Ce formulaire est prêt pour l’implémentation de la logique de transfert.</p>
+        </div>
+    </div>
+</body>
 </html>

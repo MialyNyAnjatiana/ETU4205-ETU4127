@@ -1,97 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retrait client</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f8;
-            color: #222;
-        }
-
-        header {
-            background: #124e8c;
-            color: #fff;
-            padding: 1rem;
-        }
-
-        nav a {
-            color: #fff;
-            margin-right: 1rem;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 2rem;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-            padding: 1.5rem;
-        }
-
-        .field {
-            margin-bottom: 1rem;
-        }
-
-        .field label {
-            display: block;
-            margin-bottom: .5rem;
-        }
-
-        .field input {
-            width: 100%;
-            padding: .75rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        .button {
-            background: #124e8c;
-            color: #fff;
-            padding: .85rem 1.25rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-
+    <link rel="stylesheet" href="/assets/css/style.css"></head>
 <body>
-    <header>
-        <h1>Retrait</h1>
-        <nav>
-            <a href="<?= base_url('/client/dashboard') ?>">Accueil</a>
-            <a href="<?= base_url('/client/solde') ?>">Solde</a>
-            <a href="<?= base_url('/client/depot') ?>">Dépôt</a>
-            <a href="<?= base_url('/client/transfert') ?>">Transfert</a>
-            <a href="<?= base_url('/client/historique') ?>">Historique</a>
-            <a href="<?= base_url('/logout') ?>">Déconnexion</a>
+    <div class="app">
+        <nav class="navbar">
+            <a href="<?= base_url('/client/dashboard') ?>" class="navbar__logo">MonEspace</a>
+            <ul class="navbar__links">
+                <li><a href="<?= base_url('/client/dashboard') ?>">Accueil</a></li>
+                <li><a href="<?= base_url('/client/solde') ?>">Solde</a></li>
+                <li><a href="<?= base_url('/client/depot') ?>">Dépôt</a></li>
+                <li><a href="<?= base_url('/client/retrait') ?>" class="active">Retrait</a></li>
+                <li><a href="<?= base_url('/client/transfert') ?>">Transfert</a></li>
+                <li><a href="<?= base_url('/client/historique') ?>">Historique</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <a href="<?= base_url('/logout') ?>" class="navbar__button">Déconnexion</a>
+            </div>
         </nav>
-    </header>
-    <main>
-        <div class="card">
+
+        <div class="dashboard__header">
+            <div class="dashboard__title">
+                <h1>Retrait</h1>
+                <p>Retirez de l'argent de votre compte.</p>
+            </div>
+        </div>
+
+        <div class="card" style="max-width:600px;">
             <h2>Faire un retrait</h2>
-            <form method="post" action="<?= base_url('/client/retrait') ?>">
-
-                <div class="field">
-                    <label>Montant à retirer</label>
-                    <input type="number" name="montant" min="100" required>
+            <form method="post" action="<?= base_url('/client/retrait') ?>" class="form">
+                <div class="form__group">
+                    <label for="montant">Montant à retirer (Ar)</label>
+                    <input type="number" id="montant" name="montant" min="100" placeholder="Entrez le montant" required>
                 </div>
-
-                <button class="button">
-                    Retirer
-                </button>
-
+                <button type="submit" class="dashboard__button dashboard__button--accent" style="align-self:flex-start;">Retirer</button>
             </form>
         </div>
-    </main>
+    </div>
 </body>
-
 </html>
